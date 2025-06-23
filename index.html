@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コミュニティカフェ「いきな」 - 京都・吉田</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5f72;
+            --secondary: #a67c52;
+            --accent: #8e1b1b;
+            --light: #f8f4e9;
+            --dark: #1a1a1a;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', 'Hiragino Sans', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: var(--light);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23d4c9b1" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('images/entrance.jpg'); /* 入口图片 */
+            background-size: cover;
+            background-position: 50% 30%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 概要セクション */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-family: 'Noto Serif JP', serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 15px auto 0;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background-color: rgba(166, 124, 82, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 特徴セクション */
+        .features {
+            padding: 80px 0;
+            background-color: #f9f7f0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .feature-card:hover .feature-img img {
+            transform: scale(1.1);
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-content h3 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        /* ギャラリー */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            
+        }
+        
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 500px;           /* 可调为更大更小 */
+            object-fit: contain;     /* ⭐改这个就可以防止裁剪 */
+            padding: 10px;
+            background: #fff8f0;     /* 可选，为空白部分加背景 */
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+        
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-btn:hover {
+            background-color: white;
+            color: var(--accent);
+        }
+        
+        /* 営業情報 */
+        .info {
+            padding: 80px 0;
+            background-color: #f9f7f0;
+        }
+        
+        .info-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-text {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .info-details {
+            margin: 30px 0;
+        }
+        
+        .info-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-details i {
+            color: var(--secondary);
+            margin-right: 15px;
+            min-width: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .hours {
+            background-color: rgba(44, 95, 114, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .hours h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hours h4 i {
+            margin-right: 10px;
+        }
+        
+        .map {
+            flex: 1;
+            min-height: 400px;
+            background: #eee;
+            position: relative;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
+                        url('images/map-placeholder.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* フッター */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 900px) {
+            .about-content, .info-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .slider {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slider {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    いきな
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション - 入口图片 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>美味しいコーヒーと静かな空間をご提供します</h1>
+            <p>京都・吉田のコミュニティカフェ「いきな」へようこそ</p>
+            <a href="#info" class="btn">営業時間を見る</a>
+        </div>
+    </section>
+
+    <!-- 概要セクション -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">カフェについて</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>京都左京区の吉田地区にコミュニティ、カフェ「いきな」がオープンしました。これは近隣の人たちに交流の場を提供する目的でオーナーが自宅の一部に手を加えて開設したもので、先日オープニングイベントが開催されました。</p>
+                    
+                    <p>オーナーは京都の文化や歴史に詳しく専門誌に記事を連載するほどの方で、これまでも歴史好きの有志や京大歴史研究会と共に吉田町歩きを何度か企画されています。</p>
+                    
+                    <p>
+                        カフェには膨大な量の京都関連書籍が並べられ、コーヒーを飲みながら自由に読むことができます。地域の庭師さんによる本格的な庭にはやわらかな風がそよぎ、心が落ち着きます。
+                    </p>
+                    
+                    <p>毎月ピアニストによるジャズライブも開催していますので、ご趣味のある方は一度覗いてみてはいかがでしょうか。</p>
+                </div>
+                <!-- 店主图片 -->
+                <div class="about-image">
+                    <img src="images/owner.jpg" alt="カフェオーナー">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">いきなの特徴</h2>
+            <div class="features-grid">
+                <!-- 京都书籍特征 -->
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/book.jpg" alt="京都関連書籍">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-book"></i> 京都関連書籍</h3>
+                        <p>歴史や文化に関する豊富な書籍が揃っています。京都の魅力をより深く知ることができる環境です。</p>
+                    </div>
+                </div>
+                
+                <!-- 咖啡特征 -->
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/coffee.jpg" alt="特製コーヒー">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-coffee"></i> 特製コーヒー</h3>
+                        <p>厳選された豆を使用した香り高いコーヒー。京都の静かな時間をお楽しみください。</p>
+                    </div>
+                </div>
+                
+                <!-- 爵士钢琴特征 -->
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/piano.jpg" alt="ジャズライブ">
+                    </div>
+                    <div class="feature-content">
+                        <h3><i class="fas fa-music"></i> ジャズライブ</h3>
+                        <p>毎月プロのピアニストによるジャズライブを開催。優雅な時間を過ごせます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ギャラリーセクション - 所有图片轮播 -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">フォトギャラリー</h2>
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide">
+                        <img src="images/entrance.jpg" alt="カフェ入口">
+                    </div>
+                    <div class="slide">
+                        <img src="images/owner.jpg" alt="オーナー">
+                    </div>
+                    <div class="slide">
+                        <img src="images/book.jpg" alt="京都書籍">
+                    </div>
+                    <div class="slide">
+                        <img src="images/coffee.jpg" alt="コーヒー">
+                    </div>
+                    <div class="slide">
+                        <img src="images/piano.jpg" alt="ピアノ">
+                    </div>
+                    <div class="slide">
+                        <img src="images/menu.jpg" alt="メニュー">
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 営業情報 -->
+    <section class="info" id="info">
+        <div class="container">
+            <h2 class="section-title">営業情報</h2>
+            <div class="info-container">
+                <div class="info-text">
+                    <h3>コミュニティカフェ「いきな」</h3>
+                    <p>代表：川瀬俊之さん</p>
+                    
+                    <div class="info-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 京都市左京区吉田上阿達町１０</p>
+                        <p><i class="fas fa-envelope"></i> ikina2022@gmail.com</p>
+                    </div>
+                    
+                    <div class="hours">
+                        <h4><i class="fas fa-clock"></i> 営業時間</h4>
+                        <p>日曜日: 11:00 - 18:00</p>
+                        <p>月曜日: 11:00 - 18:00</p>
+                        <p>火曜日: 11:00 - 18:00</p>
+                        <p>木曜日: 11:00 - 18:00</p>
+                        <p>水曜日・金曜日・土曜日: 定休日</p>
+                    </div>
+                    
+                    <p>※歴史散策イベントやジャズライブの開催日は時間が変更になる場合があります。</p>
+                </div>
+                <div class="map">
+                    <div class="map-overlay">
+                         <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.2082171267216!2d135.77459279999997!3d35.026520600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600109ea14ab5821%3A0x536f968a797f1338!2z5ZCJ55Sw44Kz44Of44Ol44OL44OG44Kj44Kr44OV44KnIOOBhOOBjeOBqg!5e0!3m2!1szh-CN!2sjp!4v1750684040359!5m2!1szh-CN!2sjp"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        // スライダー機能
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = slideCount - 1;
+            } else if (index >= slideCount) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+        
+        // 自動スライド
+        setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
+        
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
