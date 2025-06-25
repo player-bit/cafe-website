@@ -1,12 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>カフェいきな 管理画面</title>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </head>
-  <body>
-      <!-- 添加这个容器 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内容管理系统</title>
+  
+  <!-- 添加手动初始化标志 -->
+  <script>
+    CMS_MANUAL_INIT = true;
+  </script>
+  
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+</head>
+<body>
+  <!-- 确保挂载点存在 -->
   <div id="nc-root"></div>
-  </body>
+  
+  <!-- 添加初始化脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 确保元素存在后再初始化
+      if(document.getElementById('nc-root')) {
+        CMS.init();
+      } else {
+        console.error('CMS挂载点#nc-root未找到');
+      }
+    });
+  </script>
+</body>
 </html>
