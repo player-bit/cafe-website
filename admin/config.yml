@@ -1,18 +1,19 @@
 backend:
-  name: github
-  repo: player-bit/cafe-website
+  name: git-gateway
   branch: main
 
-media_folder: "images"       # 上传图片后保存的位置
-public_folder: "/images"
+# 添加以下配置
+publish_mode: editorial_workflow
+show_preview_links: true
+
+# 禁用自动初始化
+cms_manual_init: true
 
 collections:
-  - name: "books"
-    label: "今日の一冊"
-    folder: "books"
+  - name: "blog"
+    label: "文章"
+    folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "タイトル", name: "title", widget: "string" }
-      - { label: "紹介文", name: "body", widget: "markdown" }
-      - { label: "表紙画像", name: "cover", widget: "image" }
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown"}
