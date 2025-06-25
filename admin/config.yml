@@ -2,12 +2,15 @@ backend:
   name: git-gateway
   branch: main
 
-# 添加以下配置
-publish_mode: editorial_workflow
-show_preview_links: true
+# 媒体配置 - 必须添加
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
-# 禁用自动初始化
-cms_manual_init: true
+# 媒体库配置 - 强烈推荐
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey"
 
 collections:
   - name: "blog"
@@ -15,5 +18,7 @@ collections:
     folder: "content/blog"
     create: true
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "内容", name: "body", widget: "markdown"}
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "封面图片", name: "image", widget: "image" }
+      - { label: "内容", name: "body", widget: "markdown" }
