@@ -1,2 +1,11 @@
-title: Ikina Cafe
-description: 京都についての本が楽しめるカフェ
+# 必需配置
+timezone: Asia/Tokyo
+static: true
+build: false
+
+# 可选优化（用于可视化编辑）
+cloudcannon:
+  editable_elements: true
+  preview:
+    css:
+      - /css/styles.css
