@@ -592,12 +592,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <!-- cloudcannon:edit name="logo" type="html" -->
-                <a href="#" class="logo">
+                <!-- 使用标准HTML属性替代CloudCannon注释 -->
+                <a href="#" class="logo editable" data-cc-field="logo" data-cc-type="html">
                     <i class="fas fa-leaf"></i>
                     いきな
                 </a>
-                <!-- /cloudcannon:edit -->
             </div>
         </div>
     </header>
@@ -605,17 +604,9 @@
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-content">
-            <!-- cloudcannon:edit name="main_title" -->
-            <h1>京都に関する図書が<br>静かな空間で楽しめる</h1>
-            <!-- /cloudcannon:edit -->
-            
-            <!-- cloudcannon:edit name="subtitle" -->
-            <p>吉田コミュニティカフェ「いきな」へようこそ</p>
-            <!-- /cloudcannon:edit -->
-            
-            <!-- cloudcannon:edit name="cta_button" -->
-            <a href="#info" class="btn">営業時間を見る</a>
-            <!-- /cloudcannon:edit -->
+            <h1 class="editable" data-cc-field="main_title">京都に関する図書が<br>静かな空間で楽しめる</h1>
+            <p class="editable" data-cc-field="subtitle">吉田コミュニティカフェ「いきな」へようこそ</p>
+            <a href="#info" class="btn editable" data-cc-field="cta_button">営業時間を見る</a>
         </div>
     </section>
 
@@ -624,21 +615,14 @@
         <div class="container">
             <h2 class="section-title">「いきな」について</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <!-- cloudcannon:edit name="about_description" type="html" -->
+                <div class="about-text editable" data-cc-field="about_description" data-cc-type="html">
                     <p>京都市左京区の吉田地区にコミュニティカフェ「いきな」がオープンして、4年目になります。近隣の人たちに交流の場を提供する目的で自宅の一部を改装して開設したものです。</p>
-                    
                     <p>京都の文化や歴史に詳しく専門誌に記事を連載するほどの方で、これまでも歴史好きの有志や京大歴史研究会と共に吉田町歩きを何度か企画されています。</p>
-                    
                     <p>カフェには膨大な量の京都関連書籍が並べられ、コーヒーを飲みながら自由に読むことができます。地域の庭師さんによる本格的な庭にはやわらかな風がそよぎ、心が落ち着きます。</p>
-                    
                     <p>毎月ピアニストによるジャズライブも開催していますので、ご趣味のある方は一度覗いてみてはいかがでしょうか。</p>
-                    <!-- /cloudcannon:edit -->
                 </div>
                 <div class="about-image">
-                    <!-- cloudcannon:edit name="owner_photo" type="image" path="/images/" -->
-                    <img src="images/owner.jpg" alt="カフェオーナー">
-                    <!-- /cloudcannon:edit -->
+                    <img src="images/owner.jpg" alt="カフェオーナー" class="editable" data-cc-field="owner_photo" data-cc-type="image" data-cc-path="/images/">
                 </div>
             </div>
         </div>
@@ -650,8 +634,7 @@
             <h2 class="section-title">いきなの特徴</h2>
             <div class="features-grid">
                 <!-- 京都書籍特征 -->
-                <div class="feature-card">
-                    <!-- cloudcannon:edit name="feature_book" type="html" -->
+                <div class="feature-card editable" data-cc-field="feature_book" data-cc-type="html">
                     <div class="feature-img">
                         <img src="images/book.jpg" alt="京都関連書籍">
                     </div>
@@ -659,12 +642,10 @@
                         <h3><i class="fas fa-book"></i> 京都関連書籍</h3>
                         <p>歴史や文化に関する豊富な書籍が揃っています。京都の魅力をより深く知ることができる環境です。</p>
                     </div>
-                    <!-- /cloudcannon:edit -->
                 </div>
                 
                 <!-- 咖啡特征 -->
-                <div class="feature-card">
-                    <!-- cloudcannon:edit name="feature_coffee" type="html" -->
+                <div class="feature-card editable" data-cc-field="feature_coffee" data-cc-type="html">
                     <div class="feature-img">
                         <img src="images/coffee.jpg" alt="特製コーヒー">
                     </div>
@@ -672,12 +653,10 @@
                         <h3><i class="fas fa-coffee"></i> 特製コーヒー</h3>
                         <p>厳選された豆を使用した香り高いコーヒー。京都の静かな時間をお楽しみください。</p>
                     </div>
-                    <!-- /cloudcannon:edit -->
                 </div>
                 
                 <!-- 爵士钢琴特征 -->
-                <div class="feature-card">
-                    <!-- cloudcannon:edit name="feature_music" type="html" -->
+                <div class="feature-card editable" data-cc-field="feature_music" data-cc-type="html">
                     <div class="feature-img">
                         <img src="images/piano.jpg" alt="ジャズライブ">
                     </div>
@@ -685,7 +664,6 @@
                         <h3><i class="fas fa-music"></i> ジャズライブ</h3>
                         <p>毎月プロのピアニストによるジャズライブを開催。優雅な時間を過ごせます。</p>
                     </div>
-                    <!-- /cloudcannon:edit -->
                 </div>
             </div>
         </div>
@@ -696,28 +674,26 @@
         <div class="container">
             <h2 class="section-title">フォトギャラリー</h2>
             <div class="slider-container">
-                <!-- cloudcannon:edit name="gallery" type="array" item_type="image" path="/images/gallery/" -->
-                <div class="slider" id="slider">
+                <div class="slider" id="slider" data-cc-field="gallery" data-cc-type="array" data-cc-item-type="image" data-cc-path="/images/gallery/">
                     <div class="slide">
-                        <img src="images/entrance.jpg" alt="カフェ入口">
+                        <img src="images/entrance.jpg" alt="カフェ入口" data-cc-item-field="alt" value="カフェ入口">
                     </div>
                     <div class="slide">
-                        <img src="images/owner.jpg" alt="オーナー">
+                        <img src="images/owner.jpg" alt="オーナー" data-cc-item-field="alt" value="オーナー">
                     </div>
                     <div class="slide">
-                        <img src="images/book.jpg" alt="京都書籍">
+                        <img src="images/book.jpg" alt="京都書籍" data-cc-item-field="alt" value="京都書籍">
                     </div>
                     <div class="slide">
-                        <img src="images/coffee.jpg" alt="コーヒー">
+                        <img src="images/coffee.jpg" alt="コーヒー" data-cc-item-field="alt" value="コーヒー">
                     </div>
                     <div class="slide">
-                        <img src="images/piano.jpg" alt="ピアノ">
+                        <img src="images/piano.jpg" alt="ピアノ" data-cc-item-field="alt" value="ピアノ">
                     </div>
                     <div class="slide">
-                        <img src="images/menu.jpg" alt="メニュー">
+                        <img src="images/menu.jpg" alt="メニュー" data-cc-item-field="alt" value="メニュー">
                     </div>
                 </div>
-                <!-- /cloudcannon:edit -->
                 <div class="slider-nav">
                     <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
                     <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
@@ -731,8 +707,7 @@
         <div class="container">
             <h2 class="section-title">営業情報</h2>
             <div class="info-container">
-                <div class="info-text">
-                    <!-- cloudcannon:edit name="business_info" type="html" -->
+                <div class="info-text editable" data-cc-field="business_info" data-cc-type="html">
                     <h3>コミュニティカフェ「いきな」</h3>
                     <p>代表：川瀬俊之さん</p>
                     
@@ -751,7 +726,6 @@
                     </div>
                     
                     <p>※歴史散策イベントやジャズライブの開催日は時間が変更になる場合があります。</p>
-                    <!-- /cloudcannon:edit -->
                 </div>
                 <div class="map">
                     <div class="map-overlay">
@@ -762,7 +736,7 @@
                             style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"loading="eager">
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
@@ -770,43 +744,48 @@
         </div>
     </section>
 
-    <!-- 原有JS保持不变 -->
+    <!-- JavaScript优化 -->
     <script>
-        // スライダー機能
-        const slider = document.querySelector('.slider');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
+        // 检测是否在CloudCannon编辑器中
+        const isEditing = window.location.href.includes('cloudcannon');
         
-        let currentIndex = 0;
-        const slideCount = slides.length;
-        
-        function goToSlide(index) {
-            if (index < 0) {
-                currentIndex = slideCount - 1;
-            } else if (index >= slideCount) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
+        // スライダー機能（编辑模式下禁用自动滑动）
+        if (!isEditing) {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            
+            function goToSlide(index) {
+                if (index < 0) {
+                    currentIndex = slideCount - 1;
+                } else if (index >= slideCount) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+                
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
             
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentIndex - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentIndex + 1);
+            });
+            
+            // 非编辑模式下启用自动滑动
+            setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
         }
-        
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentIndex - 1);
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentIndex + 1);
-        });
-        
-        // 自動スライド
-        setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 5000);
-        
-        // スムーズスクロール
+
+        // スムーズスクロール（全模式下可用）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
