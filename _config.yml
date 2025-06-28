@@ -9,3 +9,11 @@ cloudcannon:
   preview:
     css:
       - /css/styles.css
+  options:
+    inputs:
+      hero-title:
+        type: text
+        label: ヒーローセクションタイトル
+      hero-subtitle:
+        type: text
+        label: ヒーローセクションサブタイトル
