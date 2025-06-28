@@ -1,19 +1,60 @@
-# 必需配置
-timezone: Asia/Tokyo
-static: true
-build: false
-
-# 可选优化（用于可视化编辑）
+# CloudCannon 配置
 cloudcannon:
   editable_elements: true
-  preview:
-    css:
-      - /css/styles.css
-  options:
+  cookies:
+    enabled: true
+  storage:
+    enabled: true
+  features:
+    lazy_loading: false
+  data:
     inputs:
-      hero-title:
+      # 文本类
+      logo:
+        type: html
+        label: "ロゴ"
+      main_title:
         type: text
-        label: ヒーローセクションタイトル
-      hero-subtitle:
+        label: "メインタイトル"
+      subtitle:
         type: text
-        label: ヒーローセクションサブタイトル
+        label: "サブタイトル"
+      cta_button:
+        type: html
+        label: "ボタンテキスト"
+
+      # HTML内容块
+      about_description:
+        type: html
+        label: "カフェ概要"
+      business_info:
+        type: html
+        label: "営業情報"
+
+      # 图片类
+      owner_photo:
+        type: image
+        path: "/images/"
+        label: "オーナー写真"
+      
+      # 特征区块
+      feature_book:
+        type: html
+        label: "書籍特徴"
+      feature_coffee:
+        type: html
+        label: "コーヒー特徴"
+      feature_music:
+        type: html
+        label: "音楽ライブ特徴"
+
+      # 画廊
+      gallery:
+        type: array
+        item_type: image
+        path: "/images/gallery/"
+        label: "ギャラリー画像"
+        item_config:
+          alt:
+            type: text
+            label: "画像説明"
