@@ -1,19 +1,56 @@
-timezone: Asia/Tokyo
-static: false
-build: true
+# CloudCannon 配置
 cloudcannon:
   editable_elements: true
-  preview:
-    css: /css/styles.css
-  collections:
-    pages:
-      output: true
   data:
     inputs:
+      # 文本字段
       hero_title:
         type: text
-        label: ヒーローセクションタイトル
-        description: メインヘッドラインを編集
+        label: "ヒーローセクションタイトル"
       hero_subtitle:
         type: text
-        label: ヒーローセクションサブタイトル
+        label: "ヒーローセクションサブタイトル"
+      about_text:
+        type: html
+        label: "「いきな」についての説明"
+      hours_text:
+        type: html
+        label: "営業時間情報"
+      feature_book_text:
+        type: html
+        label: "書籍特徴テキスト"
+      feature_coffee_text:
+        type: html
+        label: "コーヒー特徴テキスト"
+      feature_music_text:
+        type: html
+        label: "音楽ライブ特徴テキスト"
+      
+      # 图片字段
+      owner_image:
+        type: image
+        path: "/images/"
+        label: "オーナー画像"
+      feature_book_image:
+        type: image
+        path: "/images/"
+        label: "書籍特徴画像"
+      feature_coffee_image:
+        type: image
+        path: "/images/"
+        label: "コーヒー特徴画像"
+      feature_music_image:
+        type: image
+        path: "/images/"
+        label: "音楽ライブ画像"
+      
+      # 画廊（数组类型）
+      gallery_images:
+        type: array
+        item_type: image
+        path: "/images/gallery/"
+        label: "ギャラリー画像"
+        item_config:
+          alt:
+            type: text
+            label: "画像説明文"
