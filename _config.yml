@@ -3,49 +3,47 @@ cloudcannon:
   editable_elements: true
   data:
     inputs:
-      # 文本字段
-      hero_title:
+      # 文本类
+      logo:
+        type: html
+        label: "ロゴ"
+      main_title:
         type: text
-        label: "ヒーローセクションタイトル"
-      hero_subtitle:
+        label: "メインタイトル"
+      subtitle:
         type: text
-        label: "ヒーローセクションサブタイトル"
-      about_text:
+        label: "サブタイトル"
+      cta_button:
         type: html
-        label: "「いきな」についての説明"
-      hours_text:
+        label: "ボタンテキスト"
+
+      # HTML内容块
+      about_description:
         type: html
-        label: "営業時間情報"
-      feature_book_text:
+        label: "カフェ概要"
+      business_info:
         type: html
-        label: "書籍特徴テキスト"
-      feature_coffee_text:
-        type: html
-        label: "コーヒー特徴テキスト"
-      feature_music_text:
-        type: html
-        label: "音楽ライブ特徴テキスト"
+        label: "営業情報"
+
+      # 图片类
+      owner_photo:
+        type: image
+        path: "/images/"
+        label: "オーナー写真"
       
-      # 图片字段
-      owner_image:
-        type: image
-        path: "/images/"
-        label: "オーナー画像"
-      feature_book_image:
-        type: image
-        path: "/images/"
-        label: "書籍特徴画像"
-      feature_coffee_image:
-        type: image
-        path: "/images/"
-        label: "コーヒー特徴画像"
-      feature_music_image:
-        type: image
-        path: "/images/"
-        label: "音楽ライブ画像"
-      
-      # 画廊（数组类型）
-      gallery_images:
+      # 特征区块
+      feature_book:
+        type: html
+        label: "書籍特徴"
+      feature_coffee:
+        type: html
+        label: "コーヒー特徴"
+      feature_music:
+        type: html
+        label: "音楽ライブ特徴"
+
+      # 画廊
+      gallery:
         type: array
         item_type: image
         path: "/images/gallery/"
@@ -53,4 +51,4 @@ cloudcannon:
         item_config:
           alt:
             type: text
-            label: "画像説明文"
+            label: "画像説明"
