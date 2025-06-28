@@ -5,6 +5,8 @@ cloudcannon:
     enabled: true
   storage:
     enabled: true
+  features:
+    lazy_loading: false
   data:
     inputs:
       # 文本类
