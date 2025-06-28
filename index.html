@@ -741,10 +741,7 @@
     <!-- JavaScript优化 -->
     <script>
         // 检测是否在CloudCannon编辑器中
-        const isEditing = window.location.href.includes('cloudcannon');
         
-        // スライダー機能（编辑模式下禁用自动滑动）
-        if (!isEditing) {
             const slider = document.querySelector('.slider');
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.querySelector('.prev');
@@ -763,7 +760,7 @@
                 }
                 
                 slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
+            
             
             prevBtn.addEventListener('click', () => {
                 goToSlide(currentIndex - 1);
