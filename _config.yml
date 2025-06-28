@@ -1,9 +1,6 @@
-# _config.yml
 timezone: Asia/Tokyo
-static: true
-build: false
-
-# CloudCannon 高级配置
+static: false
+build: true
 cloudcannon:
   editable_elements: true
   preview:
@@ -13,10 +10,10 @@ cloudcannon:
       output: true
   data:
     inputs:
-      hero_title:  # 与HTML中的name对应
+      hero_title:
         type: text
-        label: "ヒーローセクションタイトル"
-        description: "メインヘッドラインを編集"
+        label: ヒーローセクションタイトル
+        description: メインヘッドラインを編集
       hero_subtitle:
         type: text
-        label: "ヒーローセクションサブタイトル"
+        label: ヒーローセクションサブタイトル
