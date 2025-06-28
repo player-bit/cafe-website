@@ -1,19 +1,22 @@
-# 必需配置
+# _config.yml
 timezone: Asia/Tokyo
 static: true
 build: false
 
-# 可选优化（用于可视化编辑）
+# CloudCannon 高级配置
 cloudcannon:
   editable_elements: true
   preview:
-    css:
-      - /css/styles.css
-  options:
+    css: /css/styles.css
+  collections:
+    pages:
+      output: true
+  data:
     inputs:
-      hero-title:
+      hero_title:  # 与HTML中的name对应
         type: text
-        label: ヒーローセクションタイトル
-      hero-subtitle:
+        label: "ヒーローセクションタイトル"
+        description: "メインヘッドラインを編集"
+      hero_subtitle:
         type: text
-        label: ヒーローセクションサブタイトル
+        label: "ヒーローセクションサブタイトル"
