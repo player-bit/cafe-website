@@ -669,37 +669,47 @@
     </section>
 
     <!-- ギャラリーセクション -->
-    <section class="gallery">
-        <div class="container">
-            <h2 class="section-title editable">フォトギャラリー</h2>
-            <div class="slider-container">
-                <div class="slider" id="slider" data-cc-field="gallery" data-cc-type="array" data-cc-item-type="image" data-cc-path="/images/gallery/">
-                    <div class="slide editable">
-                        <img src="images/entrance.jpg" alt="カフェ入口" data-cc-item-field="alt" value="カフェ入口" />
-                    </div>
-                    <div class="slide editable">
-                        <img src="images/owner.jpg" alt="オーナー" data-cc-item-field="alt" value="オーナー" />
-                    </div>
-                    <div class="slide editable">
-                        <img src="images/book.jpg" alt="京都書籍" data-cc-item-field="alt" value="京都書籍" />
-                    </div>
-                    <div class="slide editable">
-                        <img src="images/coffee.jpg" alt="コーヒー" data-cc-item-field="alt" value="コーヒー" />
-                    </div>
-                    <div class="slide editable">
-                        <img src="images/piano.jpg" alt="ピアノ" data-cc-item-field="alt" value="ピアノ" />
-                    </div>
-                    <div class="slide editable">
-                        <img src="images/menu.jpg" alt="メニュー" data-cc-item-field="alt" value="メニュー" />
-                    </div>
-                </div>
-                <div class="slider-nav">
-                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
+  <section class="gallery">
+  <div class="container">
+    <h2 class="section-title editable">フォトギャラリー</h2>
+    <div class="slider-container">
+      <!-- 使用HTML5数据属性替代value属性 -->
+      <div class="slider" id="slider" 
+           data-cc-field="gallery" 
+           data-cc-type="array" 
+           data-cc-item-type="image" 
+           data-cc-path="/images/gallery/">
+        
+        <!-- 每个幻灯片项 -->
+        <div class="slide editable" data-cc-array-item>
+          <img src="images/entrance.jpg" 
+               class="editable"
+               data-cc-item-field="alt" 
+               data-cc-alt="カフェ入口"
+               alt="カフェ入口">
+          <p class="editable" data-cc-item-field="caption">京都風の玄関</p>
         </div>
-    </section>
+        
+        <div class="slide editable" data-cc-array-item>
+          <img src="images/owner.jpg"
+               class="editable"
+               data-cc-item-field="alt"
+               data-cc-alt="オーナー"
+               alt="オーナー">
+          <p class="editable" data-cc-item-field="caption">川瀬オーナー</p>
+        </div>
+
+        <!-- 剩余幻灯片项... -->
+      </div>
+
+      <!-- 导航按钮（不需要编辑） -->
+      <div class="slider-nav">
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- 営業情報 -->
     <section class="info" id="info">
