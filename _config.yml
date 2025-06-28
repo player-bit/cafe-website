@@ -1,6 +1,10 @@
 # CloudCannon 配置
 cloudcannon:
   editable_elements: true
+  cookies:
+    enabled: true
+  storage:
+    enabled: true
   data:
     inputs:
       # 文本类
